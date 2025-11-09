@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&display=swap');
+
+
+:root {
+    --primary-color: #6366F1;
+    --accent-color: #3f83f8;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --background-color: #ffffff;
+    --light-gray: #f0f0f0;
+    --gray: #808080;
+    --dark-gray: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:1280px) {
+    .header{
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }    
+}
+
+.nav-elements{
+    display: none;
+    gap: 1.5rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo-text{
+    font-size: 2rem;
+    font-weight: bold;
+    gap: 0.625;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.logo-icon{
+    height: 5.875rem;
+    width: 1.938rem;
+}
+
+.nav-link{
+    color: #718096;
+    font-size: 1.25rem;
+    transform: color 0.1s;
+    font-weight: 600;
+}
+
+.nav-link:hover{
+    color: var(--link-color);
+}
+
+.contact-button{
+    display: none;
+    border: none;
+    border-radius: 0.375rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.1s;
+}
+
+.contact-button:hover{
+    background-color: #5254f8;
+}
+
+@media screen and (min-width:768px){
+    .nav-elements,
+    .contact-button{
+        display: flex;
+    }
+}
+
+.menu-button{
+    background-color: var(--background-color);
+    border: none;
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .menu-button{
+        display: block;
+        padding: 0.75rem 1.5rem;
+
+    }
+}
+
+.menu-icon{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.nav-link:focus{
+    outline: 2px blue;
+}
+
+/* header code ends here */
+
+.main{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.6rem;
+}
+
+.image-container{
+    border: none;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 67vh;
+}
+
+.section-image{
+    height: 100%;
+    width: 100%;
+}
+
+.left-section{
+    text-align: center;
+    animation: slidefromleft 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slidefromleft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.lable{
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.tittle{
+    font-size: 2.3rem;
+    color: var(--text-color);
+    padding: 1.1rem;
+}
+
+.description{
+    color: var(--gray);
+    font-size: 1.13rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.start-button,
+.tour-button{
+    border: none;
+    border-radius: 0.375rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.1s;
+}
+
+.tour-button{
+    background-color: var(--dark-gray);
+}
+
+.start-button:hover{
+    background-color: #5254f8;
+}
+
+.tour-button:hover{
+    background-color: var(--gray);
+}
+
+@media screen  and (min-width:768px) {
+    .main{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .left-section{
+        max-width: 50%;
+        text-align: start;
+    }
+
+    .tittle{
+        padding-left: 0;
+    }
+
+    .buttons{
+        justify-content: start;
+        padding-left: 0;
+    }
+
+    .lable{
+        font-size: 1rem;
+    }
+
+    .tittle{
+        font-size: 3rem;
+    }
+
+    .description{
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        max-width: 68%;
+    }
+}
+
+/* main code ends here */
+
+.company-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3.5rem;
+    margin-bottom: 1rem;
+    animation: slidefromleft 1s ease forwards;
+
+}
+
+.company-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--light-gray);
+    margin: 1rem;
+    border: none;
+    border-radius: 0.625rem;
+}
+
+.company-logo{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray);
+    display: flex;
+    gap: 0.2rem;
+    padding: 1.5rem
+
+}
+
+.company-text{
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+}
+
+.svg-logo{
+    height: 1.5rem;
+}
+
+@media screen and (min-width:640px) {
+    .company-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .company-tittle{
+        font-size: 2rem;
+    }
+    
+}
+
+/* company logo section ends here */
+
+.feature-container{
+    background-color: var(--light-gray);
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.feature-content{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.feature-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.main-tittle{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.main-description{
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.card-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icon-container{
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-info{
+    color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-tittle{
+    font-weight: bold;
+    font-size: 1.3rem
+}
+
+.card:nth-child(1){
+    background-color: #4a90e2;
+}
+
+.card:nth-child(2){
+    background-color: #ff6289;
+}
+
+.card:nth-child(3){
+    background-color: #fcbf58;
+}
+
+.card:nth-child(4){
+    background-color: #44bfc3;
+}
+
+.card:nth-child(5){
+    background-color: #77b058;
+}
+
+.card:nth-child(6){
+    background-color: #7d78b1;
+}
+
+@media screen and (max-width:768px) {
+    .feature-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Cards section ends here */
+
+.testimonial-container{
+    background-color: var(--background-color);
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.testimonial-tittle{
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.testimonial-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.testimonial-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+.testimonial-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(171, 163, 163) ;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1.2rem;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid blue;
+}
+
+.testimonial-avatar{
+    height: 5rem;
+    width: 5rem;
+}
+
+.testimonial-text{
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.testimonial-name{
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.testimonial-desc{
+    font-size: 0.875rem;
+    color: #777;
+}
